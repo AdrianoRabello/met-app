@@ -1,3 +1,5 @@
+import { ShoppingCartComponent } from './../shopping-cart/shopping-cart.component';
+import { ShoppingCardService } from './../shopping-cart/shopping-card.service';
 import { MenuItem } from './../menu-item/menu-item.model';
 import { Observable } from 'rxjs/Observable';
 import { RestaurantsService } from './../../restaurants/restaurants.service';
@@ -12,7 +14,10 @@ import { ActivatedRoute } from '@angular/router';
 export class MenuComponent implements OnInit {
 
   public menu:Observable<MenuItem[]>;
-  constructor(private restauranteService:RestaurantsService,private route:ActivatedRoute) { }
+
+  public carrinho:MenuItem[] = [];
+
+  constructor(private restauranteService:RestaurantsService,private route:ActivatedRoute,private shoppingCardService:ShoppingCardService) { }
 
   ngOnInit() {
 
@@ -25,6 +30,11 @@ export class MenuComponent implements OnInit {
 
 
    
+  }
+
+  addMenuItem(item:MenuItem){
+
+      this.shoppingCardService.addItem(item)
   }
 
 }

@@ -1,3 +1,5 @@
+import { OrderComponent } from './order/order.component';
+import { ShoppingCardService } from './restaurant-detail/shopping-cart/shopping-card.service';
 import { RevewsComponent } from './restaurant-detail/revews/revews.component';
 import { RestaurantsService } from 'app/restaurants/restaurants.service';
 import { ShoppingCartComponent } from './restaurant-detail/shopping-cart/shopping-cart.component';
@@ -21,6 +23,8 @@ import { AbouteComponent } from './aboute/aboute.component'
 import { ROUTES } from './app.routes';
 import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { RestaurantDetailComponent } from './restaurant-detail/restaurant-detail.component';
+import {FormsModule} from "@angular/forms"
+
 
 
 
@@ -38,17 +42,20 @@ import { RestaurantDetailComponent } from './restaurant-detail/restaurant-detail
     MenuItemComponent,
     ShoppingCartComponent,
     RevewsComponent,
+    OrderComponent,
     
    
   ],
   imports: [
     BrowserModule,
     HttpModule,
+    FormsModule,
     RouterModule.forRoot(ROUTES)
     
   ],
   providers: [
-    RestaurantsService
+    RestaurantsService,
+    ShoppingCardService
   ],
   bootstrap: [AppComponent]
 })
