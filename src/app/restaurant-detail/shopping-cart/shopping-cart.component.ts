@@ -17,7 +17,7 @@ export class ShoppingCartComponent implements OnInit {
 
 
   items():any[]{
-
+    
     return this.shoppingCardService.items
   }
 

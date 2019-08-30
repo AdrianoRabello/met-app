@@ -1,3 +1,4 @@
+import { InputComponent } from './shared/input/input.component';
 import { OrderComponent } from './order/order.component';
 import { ShoppingCardService } from './restaurant-detail/shopping-cart/shopping-card.service';
 import { RevewsComponent } from './restaurant-detail/revews/revews.component';
@@ -23,7 +24,8 @@ import { AbouteComponent } from './aboute/aboute.component'
 import { ROUTES } from './app.routes';
 import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { RestaurantDetailComponent } from './restaurant-detail/restaurant-detail.component';
-import {FormsModule} from "@angular/forms"
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+
 
 
 
@@ -43,6 +45,7 @@ import {FormsModule} from "@angular/forms"
     ShoppingCartComponent,
     RevewsComponent,
     OrderComponent,
+    InputComponent,
     
    
   ],
@@ -50,6 +53,7 @@ import {FormsModule} from "@angular/forms"
     BrowserModule,
     HttpModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(ROUTES)
     
   ],

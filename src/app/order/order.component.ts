@@ -1,17 +1,21 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'mt-order',
-  templateUrl: './order.component.html',
-  styleUrls: ['./order.component.css']
+    selector: 'mt-order',
+    templateUrl: './order.component.html',
+    styleUrls: ['./order.component.css']
 })
 export class OrderComponent implements OnInit {
 
-  constructor() { }
+    orderForm: FormGroup;
+    constructor(private formBuilder:FormBuilder) { }
 
-  ngOnInit() {
+    ngOnInit() {
 
-    //console.log(form);
-  }
+        this.orderForm = this.formBuilder.group({
+            email: this.formBuilder.control('',[Validators.required,Validators.minLength(5)])
+        })
+    }
 
 }
