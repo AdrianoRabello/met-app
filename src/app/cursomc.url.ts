@@ -1,0 +1,1 @@
+export const CRUSOMC_URL = "http://localhost:8080/"

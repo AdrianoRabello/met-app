@@ -1,3 +1,4 @@
+import { CategoriaService } from './testes/services/categoria.service';
 import { DemiveryCostsComponent } from './order/demivery-costs/demivery-costs.component';
 import { OrderService } from './order/order.service';
 import { OrderItemsComponent } from './order/order-items/order-items.component';
@@ -82,7 +83,8 @@ import { RadioComponent } from './shared/radio/radio.component';
   providers: [
     RestaurantsService,
     ShoppingCardService,
-    OrderService
+    OrderService,
+    CategoriaService
   ],
   bootstrap: [AppComponent]
 })
