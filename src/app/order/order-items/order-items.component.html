@@ -1,33 +1,36 @@
-<div class="col-xs-12 table-responsive">
 
-  <span *ngIf="!items.lenght"><h6 class=" text-danger">Não há intens</h6> </span>
-  <table class="table table-striped" *ngIf="items.lenght">
+{{items | json}}
+<div class="col-md-12" *ngIf="!items.length ">
+    <div class="alert alert-danger text-center">Não há itens no carriho</div>
+
+</div>
+    
+<table class="table table-striped"  *ngIf="items.length">
     <thead>
-      <tr>
-        <th class="text-center">Quantidade</th>
-        <th>Item</th>
-        <th>Descrição</th>
-        <th class="text-right">Subtotal</th>
-        <th class="text-right"></th>
-      </tr>
+        <tr>
+            <th class="text-center">Quantidade</th>
+            <th>Item</th>
+            <th>Descrição</th>
+            <th class="text-right">Subtotal</th>
+            <th class="text-right"></th>
+        </tr>
     </thead>
     <tbody>
-      <tr  *ngFor="let item of items">
-        <td class="text-center">
-          <a class="btn btn-sm"><i class="fa fa-minus"  (click)="emitDecreaseQty(item)"></i></a>
-          
-         {{item.quantity}}
-        <a class="btn btn-sm"><i class="fa fa-plus" (click)="emitIcreaseQty(item)"></i></a>
-        </td>
-        <td>{{item.menuItem.name}}</td>
-       <td>{{item.menuItem.description}}</td>
-        <td class="text-right">{{item.value() | currency: 'BRL':true}}</td>
-        <td class="text-right">
-          <a class="btn btn-sm danger" (click)="emitRemove(item)"><i class="fa fa-remove"></i></a>
-        </td>
-      </tr>
-     
+        <tr *ngFor="let item of items">
+            <td class="text-center">
+                <a class="btn btn-sm" (click)="emitDecreaseQty(item)"><i class="fa fa-minus"></i></a>
+               {{item.quantity}}
+                <a class="btn btn-sm" (click)="emitIcreaseQty(item)"><i class="fa fa-plus"></i></a>
+            </td>
+            <td>{{item.menuItem.name}}</td>
+
+            <td>{{item.menuItem.description}}</td>
+            <td class="text-right">{{item.value() | currency:'BRL':true}}</td>
+            <td class="text-right">
+                <a class="btn btn-sm danger" (click)="emitRemove(item)"><i class="fa fa-remove"></i></a>
+            </td>
+        </tr>
+        
 
     </tbody>
-  </table>
-</div>
+</table>

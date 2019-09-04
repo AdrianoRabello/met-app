@@ -1,3 +1,4 @@
+import { PageTesteComponent } from './testes/page-teste/page-teste.component';
 import { OrderComponent } from './order/order.component';
 import { RevewsComponent } from './restaurant-detail/revews/revews.component';
 import { MenuComponent } from './restaurant-detail/menu/menu.component';
@@ -10,7 +11,7 @@ import { RestaurantsComponent } from './restaurants/restaurants.component';
 
 
 export const ROUTES: Routes = [
-    {path: '',component:HomeComponent},
+    {path: '',component:PageTesteComponent},
    
     {path: 'restaurants',component:RestaurantsComponent},
     {path: 'restaurants/:id',component:RestaurantDetailComponent,

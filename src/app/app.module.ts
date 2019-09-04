@@ -1,3 +1,7 @@
+import { DemiveryCostsComponent } from './order/demivery-costs/demivery-costs.component';
+import { OrderService } from './order/order.service';
+import { OrderItemsComponent } from './order/order-items/order-items.component';
+import { InputMaterialComponent } from './testes/input-material/input-material.component';
 import { InputComponent } from './shared/input/input.component';
 import { OrderComponent } from './order/order.component';
 import { ShoppingCardService } from './restaurant-detail/shopping-cart/shopping-card.service';
@@ -25,6 +29,17 @@ import { ROUTES } from './app.routes';
 import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { RestaurantDetailComponent } from './restaurant-detail/restaurant-detail.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { PageTesteComponent } from './testes/page-teste/page-teste.component';
+
+/* material */
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { RadioComponent } from './shared/radio/radio.component';
+
+
+
+
+
+
 
 
 
@@ -46,6 +61,11 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     RevewsComponent,
     OrderComponent,
     InputComponent,
+    PageTesteComponent,
+    InputMaterialComponent,
+    RadioComponent,
+    OrderItemsComponent,
+    DemiveryCostsComponent
     
    
   ],
@@ -54,12 +74,15 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     HttpModule,
     FormsModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
+    
     RouterModule.forRoot(ROUTES)
     
   ],
   providers: [
     RestaurantsService,
-    ShoppingCardService
+    ShoppingCardService,
+    OrderService
   ],
   bootstrap: [AppComponent]
 })
